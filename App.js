@@ -22,9 +22,10 @@ import Index from './views/index';
 
 export default class App extends Component {
   render() {
-    return <View>
-        <Index />
-      </View>
+    // return <View>
+    //     <Index /> 千万不能这么写 这样写就什么都没有。。
+    //   </View>
+    return <Index /> 
   }
 }
 
