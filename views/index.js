@@ -7,7 +7,9 @@ export default class App extends Component {
       <NavigatorIOS
         initialRoute={{
           component: MyScene,
-          title: 'My Initial Scene',
+          title: '最新',
+          barTintColor: '#444',
+          titleTextColor: '#fff'
         }}
         style={{flex:1}}
       />
