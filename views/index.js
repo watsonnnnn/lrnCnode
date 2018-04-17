@@ -6,7 +6,10 @@
 
 import React, { Component } from 'react';
 import { NavigatorIOS, Text, View } from 'react-native';
-import Index from './main/index';
+import Index from './main/index';//首页
+import Add from './add'; //添加
+
+/* @flow */
 
 export default class Container extends Component {
 
@@ -14,8 +17,16 @@ export default class Container extends Component {
     console.log('left')
   }
 
-  _pressRight(){
-    console.log('right')
+  _pressRight = () => {
+    console.log('right',this)
+    this.refs['nav'].push({
+        component: Add,
+        title: '添加新文章',
+        barTintColor: '#444',
+        titleTextColor: '#fff',
+        tintColor: '#fff',
+        leftButtonTitle: '后退'
+    });
   }
 
   render() {
@@ -34,6 +45,7 @@ export default class Container extends Component {
           onRightButtonPress: this._pressRight,
           onLeftButtonPress: this._pressLeft
         }}
+        ref='nav'
         style={{flex:1}}
       />
     );
